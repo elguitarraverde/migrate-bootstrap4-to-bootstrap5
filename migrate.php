@@ -14,7 +14,7 @@ function searchAndReplacePatterns($directory) {
         '/([mp])l(-[0-5])/' => '$1s$2',
         '/([mp])r(-[0-5])/' => '$1e$2',
         '/no-gutters/' => 'g-0',
-        '/ close /' => ' btn-close ',
+        '/"close"/' => '"btn-close"',
         '/left(-[0-9]*)/' => 'start$1',
         '/right(-[0-9]*)/' => 'end$1',
         '/(float|border|rounded|text)-left/' => '$1-start',
@@ -31,7 +31,11 @@ function searchAndReplacePatterns($directory) {
         '/<div class="input-group-append">\s*(.*?)\s*<\/div>/ms' => '$1',
         '/<span class="input-group-prepend">\s*(.*?)\s*<\/span>/ms' => '$1',
         '/<div class="input-group-prepend">\s*(.*?)\s*<\/div>/ms' => '$1',
-        '/\).modal()/' => ').modal(\\\'show\\\')',
+        '/\)\.modal\(\)/' => ').modal(\\\'show\\\')',
+        '/(<select\b[^>]*\b)(form-control\s)([^>]*>)/' => '$1form-select $3',
+        '/(<select\b[^>]*\b)(\bform-control\b)([^>]*>)/' => '$1form-select$3',
+        '/\s*<span\s+aria-hidden="true">\&times;<\/span>\s*/' => '',
+        '/class="alert/' => 'class="alert alert-dismissible',
     ];
 
     // Extensiones permitidas

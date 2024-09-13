@@ -10,8 +10,7 @@ php migrate.php MyPlugin/
 # input-group
 Hay que eliminar el wrapper `<span class="input-group-append">***</div>` y `<span class="input-group-prepend">***</div>` (span o div)
 
-Antes
-
+Antes:
 ```html
 <div class="input-group mb-3">
   <div class="input-group-prepend">
@@ -21,8 +20,7 @@ Antes
 </div>
 ```
 
-Después
-
+Después:
 ```html
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">@</span>
@@ -34,7 +32,7 @@ Después
 
 Hay que eliminar la clase `btn-block` y agregar `d-grid` al div padre
 
-Antes
+Antes:
 ```html
 <div class="mb-3">
     <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
@@ -42,7 +40,7 @@ Antes
 </div>
 ```
 
-Después
+Después:
 ```html
 <div class="mb-3 d-grid">
     <button type="button" class="btn btn-primary btn-lg">Block level button</button>
@@ -53,18 +51,38 @@ Después
 # input select
 hay que cambiar la clase `form-control` por `form-select` en los inputs select.
 
-Antes
-
+Antes:
 ```html
 <select class="form-control">
   <option>Large select</option>
 </select>
 ```
 
-Después
-
+Después:
 ```html
 <select class="form-select">
   <option>Large select</option>
 </select>
+```
+
+# boton cerrar de los modales
+
+hay que cambiar la clase `close` por `btn-close` y eliminar el `<span aria-hidden="true">&times;</span>`
+
+Antes:
+```html
+<div class="modal-header">
+  <h5 class="modal-title">Modal title</h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+```
+
+Después:
+```html
+<div class="modal-header">
+  <h5 class="modal-title">Modal title</h5>
+  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
 ```
