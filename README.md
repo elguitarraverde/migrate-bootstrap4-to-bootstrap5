@@ -86,3 +86,42 @@ Después:
   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 ```
+
+# navbar
+
+Hay que añadir un `<div class="container-fluid">` dentro del navbar
+
+Antes:
+```html
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  (...)
+</nav>
+```
+
+Después:
+```html
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    (...)
+  </div>
+</nav>
+```
+
+# card-columns
+
+Se ha eliminado la clase .card-columns y se puede usar en su lugar Masonry:
+
+[Bootstrap and Masonry](https://getbootstrap.com/docs/5.3/examples/masonry/)
+
+
+
