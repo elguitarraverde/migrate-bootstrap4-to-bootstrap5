@@ -1,11 +1,15 @@
 # migrate-bootstrap4-to-bootstrap5
 
+# ojo que si se ejecuta repetidamente se duplica el alert-dismissible.
+Si se desea ejecutar una y otra vez comentar esta linea 38:
+'/class="alert/' => 'class="alert alert-dismissible',
+
 # Uso
 
 ```bash
 php migrate.php MyPlugin/
 ```
-
+Con esto se avanza bastante, pero las siguientes instrucciones hay que hacerlas manualmente.
 
 # input-group
 Hay que eliminar el wrapper `<span class="input-group-append">***</div>` y `<span class="input-group-prepend">***</div>` (span o div)
